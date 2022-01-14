@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
-# Sets up a web server for deployment of web_static.
+# Installs, configures, and starts the web server
 
 apt-get update
 apt-get install -y nginx
 
 mkdir -p /data/web_static/releases/test/
 mkdir -p /data/web_static/shared/
-echo "Holberton School" > /data/web_static/releases/test/index.html
+echo "Hello World!" > /data/web_static/releases/test/index.html
 ln -sf /data/web_static/releases/test/ /data/web_static/current
 
 chown -R ubuntu /data/
@@ -25,7 +25,7 @@ printf %s "server {
     }
 
     location /redirect_me {
-        return 301 http://cuberule.com/;
+        return 301 https://joekaboagye.github.io/;
     }
 
     error_page 404 /404.html;
